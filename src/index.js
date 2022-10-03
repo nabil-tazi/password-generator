@@ -5,6 +5,7 @@ function component() {
   
     // Lodash, now imported by this script
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    //element.innerHTML = _.join(['Hola', 'Guten tag'], ' ');
   
     return element;
   }
