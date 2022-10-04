@@ -1,0 +1,191 @@
+body {
+    background: #131118;
+}
+
+h1 {
+    color: #626262;
+    font-size: 18px;
+}
+
+#main-wrapper{
+    padding-top: 100px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#character-length{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#character-length-label{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #d8d8d8;
+}
+
+#generated-password, #settings {
+    display: flex;
+    background-color: #24232A;
+    color: #d8d8d8;
+    padding-left:20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+#generated-password{
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+#copy-icon{
+    width: 20px;
+    height: 20px;
+    filter: invert(89%) sepia(0%) saturate(1590%) hue-rotate(147deg) brightness(96%) contrast(101%);
+}
+
+#length-selector{
+    width: 460px;
+}
+
+#settings{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#displayed-password{
+    font-size: 28px;
+}
+
+.checkbox-setting{
+    margin-top: 10px;
+}
+
+.checkbox-setting label{
+    margin-left: 10px;
+}
+
+#strength-container{
+    background-color: #18171F;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#strength-container label{
+    margin: 20px;
+    color:#626262;
+    font-size: 16px;
+}
+
+#strength-level{
+    margin: 20px;
+}
+
+#generate-button{
+    border: 1px solid #A5E9AE;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
+}
+
+#generate-button:hover {
+    background-color: #A5E9AE;
+}
+
+#generate-button:hover #generate-button-label{
+    color:#18171F;
+}
+
+#generate-button:hover #generate-button-icon{
+    filter: invert(5%) sepia(5%) saturate(4375%) hue-rotate(208deg) brightness(98%) contrast(90%);
+}
+
+a {
+    text-decoration:none;
+}
+
+#generate-button-label{
+    margin: 10px;
+    font-size: 16px;
+    color: #A5E9AE;
+}
+
+#generate-button-icon{
+    filter: invert(96%) sepia(1%) saturate(7333%) hue-rotate(55deg) brightness(85%) contrast(118%);
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+}
+
+
+
+
+
+
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: #A5E9AE;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #A5E9AE;
+    transform: translateY(-0.075em);
+  
+    display: inline-grid; 
+    place-content: center;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #A5E9AE;
+    color:#131118
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(0.9);
+  }
+
+
+
+
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: #131118;
+    height: 0.5rem;
+  }
