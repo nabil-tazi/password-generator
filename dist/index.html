@@ -6,20 +6,23 @@
     <title>Getting Started</title>
   </head>
   <body>
-    <!-- <script src="main.js"></script> -->
     <div id="main-wrapper">
       <h1>Password Generator</h1>
       <div id="generated-password">
         <span id="displayed-password">Qzhfbgiz376DJH</span>
-        <img src="assets/copy.png" id="copy-icon" alt=""/>
+        <div class="tooltip">
+          <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+          <img src="assets/copy.png" id="copy-icon" alt=""/>
+        </div>
+       
       </div>
       <div id="settings">
         <div id="character-length">
           <div id="character-length-label">
             <label>Character length</label>
-            <output>8</output>
+            <output id="range-output">15</output>
           </div>
-          <input id="length-selector" type="range" value="8" min="6" max="24" oninput="this.previousElementSibling.children[1].value = this.value"></input>
+          <input id="length-selector" type="range" value="15" min="6" max="24"></input>
         </div>
         <div class="checkbox-setting">
           <input type="checkbox" id="include-uppercase"/>
@@ -50,6 +53,6 @@
         </a> 
       </div>
     </div>
-
+  <script src="main.js"></script>  
   </body>
 </html>
