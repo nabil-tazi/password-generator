@@ -1,29 +1,15 @@
 import { upperCase } from "lodash";
-
-const alphabet = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-];
-
-const symbols = [
-    ',', '?', '.', ';', '/', ':', '$', '&', '@', '#', '(', ')', '!'
-];
+import { letters, symbols} from './alphabets.js';
 
 export default class Password {
     constructor(length, params){
         this.length = length;
         this.params = params;
         this.pass = this.generate();
+        this.strength = this.computeStrength();
     }
 
-    displaylog(){
-        console.log("Length : "+ this.length+" password : "+this.pass);
-    }
-
-    setLength(l){
-        this.length = l;
-    }
-
-    generate(){
+    generate() {
         if (this.params == []) {
             return "Select at least one char type"
         }
@@ -31,9 +17,9 @@ export default class Password {
         for (var i=0; i<this.length; i++) {
             var chartype = this.params[Math.floor(Math.random() * this.params.length)];
             switch (chartype){
-                case "lowercase" : p += alphabet[Math.floor(Math.random() * alphabet.length)];
+                case "lowercase" : p += letters[Math.floor(Math.random() * letters.length)];
                 break;
-                case "uppercase" : p += alphabet[Math.floor(Math.random() * alphabet.length)].toUpperCase();
+                case "uppercase" : p += letters[Math.floor(Math.random() * letters.length)].toUpperCase();
                 break;
                 case "numbers" : p += Math.floor(Math.random() * 10);
                 break;
@@ -44,5 +30,25 @@ export default class Password {
             }
         } 
         return p;
+    }
+
+    computeStrength() {
+        if (this.params.length == 0) {
+            return "INSUFFICIENT";
+        }
+        var score = Math.pow(2,this.params.length) * (this.length - 5);
+        if (score >70) {
+            return "VERY HIGH";
+        }
+        if (score >40) {
+            return "HIGH";
+        }
+        if (score >20) {
+            return "MEDIUM";
+        }
+        if (score >= 10) {
+            return "LOW";
+        }
+        return "INSUFFICIENT";
     }
 }

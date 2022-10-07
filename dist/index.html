@@ -9,7 +9,7 @@
     <div id="main-wrapper">
       <h1>Password Generator</h1>
       <div id="generated-password">
-        <span id="displayed-password">Qzhfbgiz376DJH</span>
+        <span id="displayed-password"></span>
         <div class="tooltip">
           <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
           <img src="assets/copy.png" id="copy-icon" alt=""/>
@@ -24,33 +24,32 @@
           </div>
           <input id="length-selector" type="range" value="15" min="6" max="24"></input>
         </div>
-        <div class="checkbox-setting">
-          <input type="checkbox" id="include-uppercase"/>
-          <label>Include Uppercase Letters</label>
-        </div>
-        <div class="checkbox-setting">
-          <input type="checkbox" id="include-lowercase"/>
-          <label>Include Lowercase Letter</label>
-        </div>
-        <div class="checkbox-setting">
-          <input type="checkbox" id="include-numbers"/>
-          <label>Include Numbers</label>
-        </div>
-        <div class="checkbox-setting">
-          <input type="checkbox" id="include-symbols"/>
-          <label>Include Symbols</label>
-        </div>
+        <label class="checkbox-setting">
+          <input type="checkbox" checked id="include-uppercase" value="uppercase"/>
+          <span>Include Uppercase Letters</span>
+        </label>
+        <label class="checkbox-setting">
+          <input type="checkbox" checked id="include-lowercase" value="lowercase"/>
+          <span>Include Lowercase Letter</span>
+        </label>
+        <label class="checkbox-setting">
+          <input type="checkbox" checked id="include-numbers" value="numbers"/>
+          <span>Include Numbers</span>
+        </label>
+        <label class="checkbox-setting">
+          <input type="checkbox" id="include-symbols" value="symbols"/>
+          <span>Include Symbols</span>
+        </label>
         
         
         <div id="strength-container">
           <label>STRENGTH</label>
           <div id="strength-level">MEDIUM</div>
         </div>
-
-        <a id="generate-button" href="#">
+        <div id="generate-button" href="#">
           <span id="generate-button-label">GENERATE</span>
           <img src="assets/arrow.png" id="generate-button-icon" alt="">
-        </a> 
+        </div> 
       </div>
     </div>
   <script src="main.js"></script>  
